@@ -1,6 +1,6 @@
 const express = require("express");
 //const bodyParser = require("body-parser");
-//const request = require("request");
+const request = require("request");
 require("dotenv").config();
 const app = express();
 app.use(express.static("public"));
@@ -44,8 +44,9 @@ app.get("/signup", (req, res) => {
 
 app.post("/register", (req, res) => {
   empModal.create(req.body);
-  
+  console.log("emp added");
 });
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function () {

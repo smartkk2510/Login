@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML CSS Register Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form class="signup-form" action="/register" method="post">
+
+      <!-- form header -->
+      <div class="form-header">
+        <h1>Create Account</h1>
+      </div>
+
+      <!-- form body -->
+      <div class="form-body">
+
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Name *</label>
+            <input type="text" name="name" id="firstname" class="form-input" placeholder="enter your first name" required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="emp_id" class="label-title">Employee ID</label>
+            <input type="text" name="emp_id" id="emp_id" class="form-input" placeholder="enter your employee id" />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="label-title">Email*</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="enter your email" required="required">
+        </div>
+
+        <!-- Passwrod and confirm password -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="password" class="label-title">Password *</label>
+            <input type="password" name="password" id="password" class="form-input" placeholder="enter your password" required="required">
+          </div>
+          <div class="form-group right">
+            <label for="organization" class="label-title">Organization Name</label>
+            <input type="text" name="Org_name" class="form-input" id="organization" placeholder="enter your password again" required="required">
+          </div>
+        </div>
+
+        <!-- Gender and Hobbies -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">Gender:</label>
+            <div class="input-group">
+              <label for="male"><input type="radio" name="gender" value="male" id="male"> Male</label>
+              <label for="female"><input type="radio" name="gender" value="female" id="female"> Female</label>
+            </div>
+          </div>
+          <div class="form-group right">
+            
+                <label class="label-title">Branch</label>
+                <select name="branch" class="form-input" id="level" >
+                  <option value="delhi">Delhi</option>
+                  <option value="chennai">Chennai</option>
+                  <option value="mumbai">Mumbai</option>
+                </select>
+             
+          </div>
+        </div>
+
+
+        <!-- Profile picture and Age -->
+        <div class="horizontal-group">
+          <div class="form-group left"style="margin-top:15px" >
+            <label for="phone" class="label-title">Phone number*</label>
+            <input type="number" name="ph_no" id="phone" size="80" class="form-input">
+          </div>
+          <div class="form-group right">
+            <label for="experience" class="label-title">Years of experiance</label>
+            <input type="number" name="experiance" id="experience" class="form-input">
+          </div>
+        </div>
+
+       
+
+      <!-- form-footer -->
+      <div class="form-footer">
+        <span>* required</span>
+        <button type="submit" class="btn">Create</button>
+      </div>
+
+    </form>
+
+    <!-- Script for range input label -->
+    <script>
+      var rangeLabel = document.getElementById("range-label");
+      var experience = document.getElementById("experience");
+
+      function change() {
+      rangeLabel.innerText = experience.value + "K";
+      }
+    </script>
+
+  </body>
+</html>

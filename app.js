@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 
 const empModal = require(__dirname + "/database/emp.js");
 var mongoDB = process.env.MONGODB_URI;
+
 mongoose
   .connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connection established"));
@@ -44,7 +45,8 @@ app.get("/signup", (req, res) => {
 
 app.post("/register", (req, res) => {
   empModal.create(req.body);
-  console.log("emp added");
+
+  res.json({ message: "Employee added" });
 });
 
 const PORT = process.env.PORT || 3000;
